@@ -1,4 +1,4 @@
-# Stellar Classification Using Machine Learning: Stars, Quasars, or Galaxies.
+# Stellar Classification Using Machine Learning: Stars, Quasars, and Galaxies.
 
 This repository holds an attempt to apply machine learning algorithms to classify an Stars, Quasars, and Galaxies based on their spectral characteristics using data from the Sloan Digital Sky Survey [LINK](https://www.kaggle.com/fedesoriano/stellar-classification-dataset-sdss17).
 
