@@ -40,12 +40,14 @@ The task with this dataset is to classify a Star, Quasar, or Galaxy based on 18 
 
 - Right away I saw that the dataset had an imbalance in the target variable, there was a significant amount of Galaxies compared to Quasars and Stars.
 
-  
+  ![Histograms](Visualization/histogram.png)
 
 - The data was also highly correlated. There were a few features that had very similar correlations.
 
-- With major outliers fixed I still saw a lot of outliers throughout. Quasars in particular had many more than the other classes, this may be because of just how bright they are compared to anything else in the universe.
+  ![Heatmap](Visualization/heatmap.png)
 
+- With major outliers fixed I still saw a lot of outliers throughout. Quasars in particular had many more than the other classes, this may be because of just how bright they are compared to anything else in the universe.
+  ![Boxplot](Visualization/boxplots.png)
 
 
 ## Problem Foundation
@@ -74,14 +76,15 @@ In this dataset the most important metric is accuracy. The models shown were dev
 
 - Random Forest Baseline (overfitting):
 
-
+    ![R_F](Visualization/RandomForestOverfit.png)
 
 - XGBoost Baseline:
 
-
+    ![XGBaseline](Visualization/XGB_Baseline.png)
 
 - XGBoost Cross Validation & Hyper tuning:
 
+    ![XG_Final](Visualization/XGB_Final.png)
 
 
 ## Conclusions
