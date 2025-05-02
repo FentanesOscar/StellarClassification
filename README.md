@@ -3,12 +3,21 @@
 This repository holds an attempt to apply machine learning algorithms to classify an Stars, Quasars, and Galaxies based on their spectral characteristics using data from the Sloan Digital Sky Survey LINK.
 
 
+## Overview
+
+- The task with this dataset is to classify a Star, Quasar, or Galaxy based on 18 features collected by SDSS. These features include photometric system data, angle information, and various identifiers important to mapping out the night sky. The tabular dataset includes the target feature for a straight-forward supervised-classification approach. I began with two different machine learning algorithms and developed each until reaching an acceptable accuracy metric on each and choosing the best fit model. The two models used were Random Forest and XGBoost. Through hyperparameter tuning and cross validation of both models, I found the best results in the XGBoost model. The best model was able to predict the celestial body within 97% accuracy.
 
 
-
-The task with this dataset is to classify a Star, Quasar, or Galaxy based on 18 features collected by SDSS. These features include photometric system data, angle information, and various identifiers important to mapping out the night sky. The tabular dataset includes the target feature for a straight-forward supervised-classification approach. I began with two different machine learning algorithms and developed each until reaching an acceptable accuracy metric on each and choosing the best fit model. The two models used were Random Forest and XGBoost. Through hyperparameter tuning and cross validation of both models, I found the best results in the XGBoost model. The best model was able to predict the celestial body within 97% accuracy.
-
-
+# Summary of Work Done
+## Data
+  -	Type: CSV File
+    o	Input: CSV File containing 1 categorical and 16 numerical features that describe          spectral characteristics of celestial bodies. 
+    o	Output: The type of celestial body, Star, Quasar, or Galaxy. 
+  -	Size:
+    o	The tabular dataset contained a total of 100,000 objects.
+  -	Instances: 
+    o	The data was split 80/20 where 80% of the data, 80,000 rows, were used to train the     models, and 20% of the data, 20,000 rows, were used to test the models. There were 5     validation folds used to proof each model’s metrics. 
+    ![image](https://github.com/user-attachments/assets/5b07e544-e465-45d1-816a-18d46313e557)
 
 
 
