@@ -1,6 +1,6 @@
 # Stellar Classification Using Machine Learning: Stars, Quasars, or Galaxies.
 
-This repository holds an attempt to apply machine learning algorithms to classify an Stars, Quasars, and Galaxies based on their spectral characteristics using data from the Sloan Digital Sky Survey LINK.
+This repository holds an attempt to apply machine learning algorithms to classify an Stars, Quasars, and Galaxies based on their spectral characteristics using data from the Sloan Digital Sky Survey [LINK](https://www.kaggle.com/fedesoriano/stellar-classification-dataset-sdss17).
 
 
 ## Overview
@@ -14,7 +14,7 @@ The task with this dataset is to classify a Star, Quasar, or Galaxy based on 18 
 -  Type: CSV File
 
 
-    o	Input: CSV File containing 1 categorical and 16 numerical features that describe          spectral characteristics of celestial bodies.
+    o	Input: CSV File containing 1 categorical and 16 numerical features that describe spectral characteristics of celestial bodies.
 
     o	Output: The type of celestial body, Star, Quasar, or Galaxy.
 
@@ -112,6 +112,5 @@ There are three main folders in this repository, Mode, Visualization, and Scratc
 
 ## Citations
 
-
-
-Kaggle link again
+fedesoriano. (January 2022). Stellar Classification Dataset - SDSS17 
+https://www.kaggle.com/fedesoriano/stellar-classification-dataset-sdss17.
