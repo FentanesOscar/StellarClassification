@@ -5,7 +5,7 @@ This repository holds an attempt to apply machine learning algorithms to classif
 
 ## Overview
 
-The task with this dataset is to classify a Star, Quasar, or Galaxy based on 18 features collected by SDSS. These features include photometric system data, angle information, and various identifiers important to mapping out the night sky. The tabular dataset includes the target feature for a straight-forward supervised-classification approach. I began with two different machine learning algorithms and developed each until reaching an acceptable accuracy metric on each and choosing the best fit model. The two models used were Random Forest and XGBoost. Through hyperparameter tuning and cross validation of both models, I found the best results in the XGBoost model. The best model was able to predict the celestial body within 97% accuracy.
+The task with this dataset is to classify a Star, Quasar, or Galaxy based on 18 features collected by SDSS. These features include photometric system data, angle information, and various identifiers important to mapping out the night sky. The tabular dataset includes the target feature for a straight-forward supervised-classification approach. I began with two different machine learning algorithms and developed each until reaching an acceptable accuracy metric on each and choosing the best fit model. The two models used were Random Forest and XGBoost. Through hyperparameter tuning and cross validation of both models, I found the best results in the XGBoost model. The best model was able to predict the celestial body within 97% accuracy. The best model seen for this dataset had an accuracy of 98%. 
 
 
 # Summary of Work Done
@@ -30,7 +30,7 @@ The task with this dataset is to classify a Star, Quasar, or Galaxy based on 18 
 
 ## Preprocessing/Clean up
 
-- During initial visualization of the data I realized there was abundant information collected to locate the area of the sky being surveyed. This lead to a lot of administrative data. Dates, various IDs, specific camera used to capture phenomenon, all these were part of the dataset that posed the risk of overfitting the model. All identification features were removed.
+- During initial visualization of the data I realized there was abundant information collected to locate the area of the sky being surveyed. This lead to a lot of administrative data. Dates, various IDs, specific camera used to capture phenomenon, all these were part of the dataset and posed the risk of overfitting the model. All identification features were removed.
 
 - There was a phenomenon in the photometric system data where instead of using null or leaving a blank, the data collectors decided to place an outlier. This is perhaps to make the missing data easily viewable. This was only a single datapoint and was promptly removed.
 
@@ -38,16 +38,14 @@ The task with this dataset is to classify a Star, Quasar, or Galaxy based on 18 
 
 ## Data Visualization
 
-- Right away I saw that the dataset had an imbalance in the target variable, there was a significant amount of Galaxies compared to Quasars and Stars.
+- Right away I saw that the dataset had an imbalance in the target variable, there was a significant amount of Galaxies compared to Quasars and Stars. Each class had well defined boundries in their histograms that showed a sign for a high accuracy model. A normalized histogram for the Redshift feature was difficult to capture. Quasars have a significantly higher Redshift value than Stars and Galaxies. This makes their combined histogram very difficult to read. I opted to show that feature in three seperate histograms. It did increase visibility and readability although still being far from the perfect way to see this features distribution. 
 
-  ![Histograms](Visualization/histogram.png)
+  ![Histograms](Visualization/histNorm.png)
+  ![Redshift](Visualization/redshift.png)
 
-- The data was also highly correlated. There were a few features that had very similar correlations.
+- The data was also highly correlated. There were a few features that had very similar correlations. This is another clue that the model created from this data would be highly accurate. 
 
-  ![Heatmap](Visualization/heatmap.png)
-
-- With major outliers fixed I still saw a lot of outliers throughout. Quasars in particular had many more than the other classes, this may be because of just how bright they are compared to anything else in the universe.
-  ![Boxplot](Visualization/boxplots.png)
+  ![Heatmap](Visualization/heatBetter.png)
 
 
 ## Problem Foundation
