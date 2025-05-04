@@ -1,6 +1,81 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def plot_redshift_histograms_by_class(
+    df,
+    target_col='target',
+    redshift_col='redshift',
+    bins=30,
+    density=True,
+    histtype='step',
+    alpha=0.7,
+    figsize=(12, 4),
+    colors=None
+):
+    """
+    Plot individual histograms of redshift for each unique target class.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Input DataFrame containing the target and redshift columns.
+    target_col : str, default 'target'
+        Name of the column with class labels.
+    redshift_col : str, default 'redshift'
+        Name of the column with redshift values.
+    bins : int, default 30
+        Number of histogram bins.
+    density : bool, default True
+        If True, normalize histograms so area = 1.
+    histtype : str, default 'step'
+        Matplotlib histogram type.
+    alpha : float, default 0.7
+        Transparency level for histogram lines.
+    figsize : tuple, default (12, 4)
+        Figure size in inches (width, height).
+    colors : list, optional
+        List of colors for each class; default uses tab10.
+
+    Returns
+    -------
+    fig : matplotlib.figure.Figure
+        The created Figure object.
+    axs : numpy.ndarray
+        Array of Axes objects (one per class).
+    """
+    classes = df[target_col].unique()
+    n = len(classes)
+
+    if colors is None:
+        cmap = plt.get_cmap('tab10')
+        colors = [cmap(i) for i in range(n)]
+
+    fig, axs = plt.subplots(1, n, figsize=figsize)
+    if n == 1:
+        axs = [axs]
+
+    for ax, cls, color in zip(axs, classes, colors):
+        data = df[df[target_col] == cls][redshift_col].dropna()
+        ax.hist(
+            data,
+            bins=bins,
+            density=density,
+            histtype=histtype,
+            alpha=alpha,
+            color=color
+        )
+        ax.set_title(f"{cls}")
+        ax.set_xlabel(redshift_col)
+        ax.set_ylabel('Density' if density else 'Count')
+
+    plt.tight_layout()
+    plt.show()
+    return fig, axs
 
 
 def plot_histograms_by_class(
@@ -64,6 +139,7 @@ def plot_histograms_by_class(
             ax.hist(
                 data,
                 bins=bins,
+                density = True,
                 histtype=histtype,
                 alpha=alpha,
                 label=str(cls),
