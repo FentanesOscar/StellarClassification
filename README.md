@@ -93,7 +93,7 @@ The Sloan Digital Sky Survey has proved to be a good source for well-structured 
 
 I would like to see a more abstract dataset to provide a more challenging processing period. Instead of getting a dataset from Kaggle, I would like to try a dataset directly from SDSS website. It does seem challenging but well worth the effort.
 
-The models could also be taken further and trained to classify more than 3 classes. They could be used to classify nearby planets or moons, maybe even far off exoplanets and exomoons.
+The models could also be taken further and trained to classify more than 3 classes. They could be used to classify various celestial objects such as moons, planets, and comets.
 
 # How to reproduce results
 
